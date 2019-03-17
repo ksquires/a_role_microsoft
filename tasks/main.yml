@@ -1,0 +1,12 @@
+---
+# tasks file for microsoft
+
+- name: install microsoft yum repo
+  yum:
+    name: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
+    state: present
+
+- name: install packages from microsoft repo
+  yum:
+    name: "{{ packages }}"
+    state: present
