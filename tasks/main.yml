@@ -8,5 +8,5 @@
 
 - name: install packages from microsoft repo
   yum:
-    name: "{{ packages }}"
+    name: "{{ microsoft_packages }}"
     state: present

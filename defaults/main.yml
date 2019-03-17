@@ -1,4 +1,4 @@
 ---
 # defaults file for microsoft
 
-packages: []
+microsoft_packages: []
