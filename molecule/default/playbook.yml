@@ -1,5 +1,10 @@
 ---
 - name: Converge
   hosts: all
+
+  vars:
+    microsoft_packages:
+      - powershell
+
   roles:
     - role: a_role_microsoft

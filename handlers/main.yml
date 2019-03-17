@@ -1,2 +1,7 @@
 ---
 # handlers file for microsoft
+
+- name: install packages from microsoft repo
+  yum:
+    name: "{{ microsoft_packages }}"
+    state: present

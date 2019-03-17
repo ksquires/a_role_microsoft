@@ -5,8 +5,9 @@
   yum:
     name: https://packages.microsoft.com/config/rhel/7/packages-microsoft-prod.rpm
     state: present
-
-- name: install packages from microsoft repo
-  yum:
-    name: "{{ microsoft_packages }}"
-    state: present
+    update_cache: true
+  when: >
+    microsoft_packages is defined and
+    microsoft_packages | length > 0
+  notify:
+    - install packages from microsoft repo
