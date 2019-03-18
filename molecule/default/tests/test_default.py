@@ -1,4 +1,5 @@
 import os
+import pytest
 
 import testinfra.utils.ansible_runner
 
@@ -12,3 +13,12 @@ def test_hosts_file(host):
     assert f.exists
     assert f.user == 'root'
     assert f.group == 'root'
+
+
+@pytest.mark.parametrize('pkg', [
+  'powershell'
+])
+def test_pkg(host, pkg):
+    package = host.package(pkg)
+
+    assert package.is_installed
